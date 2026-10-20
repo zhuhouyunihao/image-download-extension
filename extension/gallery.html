@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>已提取的图片 · 电商图片提取下载</title>
+  <link rel="stylesheet" href="gallery.css" />
+</head>
+<body>
+  <header class="toolbar">
+    <div class="toolbar-left">
+      <span id="summary" class="summary">加载中…</span>
+      <div class="filters" id="filters">
+        <button data-filter="all" class="active">全部</button>
+        <button data-filter="main">主图</button>
+        <button data-filter="sku">SKU 图</button>
+        <button data-filter="detail">详情图</button>
+        <button data-filter="background">其他</button>
+      </div>
+    </div>
+    <div class="toolbar-right">
+      <button id="selectAll" class="ghost">全选</button>
+      <button id="clearAll" class="ghost">清空</button>
+      <button id="downloadBtn" class="primary" disabled>下载所选 (0)</button>
+    </div>
+  </header>
+
+  <div class="progress" id="progress" hidden>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <span class="progress-text" id="progressText"></span>
+  </div>
+
+  <main class="grid" id="grid"></main>
+
+  <section class="empty" id="empty" hidden>
+    <h2>未在页面中识别到商品图片</h2>
+    <p>请确认当前页面为商品详情页，或尝试滚动页面后重新获取。</p>
+  </section>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lb-close" aria-label="关闭">×</button>
+    <button class="lb-prev" aria-label="上一张">‹</button>
+    <img id="lbImg" alt="" />
+    <button class="lb-next" aria-label="下一张">›</button>
+  </div>
+
+  <script src="gallery.js"></script>
+</body>
+</html>
